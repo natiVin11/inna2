@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פאנל ניהול - Inna Eli Katzh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>פאנל ניהול</h1>
+</header>
+
+<main>
+    <form id="loginForm">
+        <label for="username">שם משתמש:</label>
+        <input type="text" id="username" required><br><br>
+        <label for="password">סיסמא:</label>
+        <input type="password" id="password" required><br><br>
+        <button type="submit">היכנס</button>
+    </form>
+
+    <div id="dataContainer" style="display:none;">
+        <h2>פרטים שהושארו</h2>
+        <pre id="dataOutput"></pre>
+    </div>
+</main>
+
+<script>
+    document.getElementById('loginForm').onsubmit = (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (username === 'admin' && password === '12345') {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('dataContainer').style.display = 'block';
+                    document.getElementById('dataOutput').textContent = JSON.stringify(data, null, 2);
+                });
+        } else {
+            alert('שם משתמש או סיסמא לא נכונים');
+        }
+    };
+</script>
+</body>
+</html>

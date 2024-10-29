@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inna Eli Katzh - פסיכולוגית אישית והתפתחותית זוגית</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Inna Eli Katzh</h1>
+    <h2>פסיכולוגית אישית והתפתחותית זוגית</h2>
+</header>
+
+<main>
+    <section id="about">
+        <h3>עליי</h3>
+        <p>אני פסיכולוגית אישית וזוגית, מתמחה בטיפול רגשי והתפתחות אישית. אני כאן כדי לעזור לך להתמודד עם אתגרים ולבנות קשרים בריאים.</p>
+    </section>
+
+    <section id="contact">
+        <h3>השאר פרטים</h3>
+        <form id="contactForm">
+            <label for="name">שם:</label>
+            <input type="text" id="name" name="name" required placeholder="הזן את שמך כאן...">
+
+            <label for="email">אימייל:</label>
+            <input type="email" id="email" name="email" required placeholder="הזן את האימייל שלך כאן...">
+
+            <label for="message">הודעה:</label>
+            <textarea id="message" name="message" required placeholder="כתוב את הודעתך כאן..."></textarea>
+
+            <button type="submit">שלח</button>
+        </form>
+        <p id="responseMessage"></p>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 Inna Eli Katzh. כל הזכויות שמורות.</p>
+</footer>
+
+<script>
+    document.getElementById('contactForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const response = await fetch('/submit', {
+            method: 'POST',
+            body: new URLSearchParams(formData)
+        });
+        const message = await response.text();
+        document.getElementById('responseMessage').innerText = message;
+        e.target.reset(); // מאפס את הטופס
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* הגדרות כלליות */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* כותרת עליונה */
+header {
+    background-color: #4CAF50; /* צבע ירוק */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* תוכן ראשי */
+main {
+    padding: 20px;
+}
+
+/* סקשן */
+section {
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* פוטר */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #333;
+    color: white;
+    position: relative; /* שינינו ל-relative כדי להבטיח שהפוטר לא יכסה את התוכן */
+    width: 100%;
+}
+
+/* שדות קלט */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* כולל את ה-padding וה-margin בחישוב רוחב */
+    transition: border-color 0.3s;
+}
+
+/* הוספת צבע לשדות קלט */
+input:focus, textarea:focus {
+    border-color: #4CAF50; /* צבע ירוק בעת מיקוד */
+    outline: none; /* הסרת הקו סביב השדה בעת מיקוד */
+}
+
+/* כפתורים */
+button {
+    background-color: #4CAF50; /* צבע ירוק */
+    color: white;
+    border: none;
+    padding: 12px 20px; /* הוספנו padding נוסף */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* הגדלת גודל הגופן */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* שינוי צבע בעת ריחוף */
+    transform: scale(1.05); /* הקטנה של הכפתור */
+}
+
+/* תצוגת נתונים */
+#dataOutput {
+    white-space: pre-wrap;
+    background-color: #e9ecef; /* צבע רקע עבור התצוגה */
+    padding: 15px; /* padding נוסף */
+    border-radius: 5px; /* רדיוס פינות */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* עיצוב עבור נגישות */
+h1, h2, h3 {
+    color: #333; /* צבע טקסט */
+    margin: 10px 0; /* מרווח */
+}
+
+/* עיצוב כללי */
+.container {
+    max-width: 800px; /* רוחב מרבי */
+    margin: auto; /* מרכז */
+    padding: 20px; /* padding */
+}
